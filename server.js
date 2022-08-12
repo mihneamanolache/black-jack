@@ -10,7 +10,9 @@ import { socket } from './socket.js';
 import { COLORS } from './constants/colors.js'
 
 const PORT = process.env.PORT || 4000; 
-const HOST = process.env.HOST || 'localhost'
+const HOST = PORT === 4000 
+                ? 'localhost'
+                : 'https://react-jack.herokuapp.com/'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -18,7 +20,9 @@ const app = express();
 const server = createServer(app)
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:4000",
+        origin: HOST === "localhost"
+            ? "http://localhost:4000"
+            : "https://react-jack.herokuapp.com/",
         credentials: true,
     }
 })
