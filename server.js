@@ -29,7 +29,7 @@ const io = new Server(server, {
     }
 })
 
-app.listen(PORT, () => console.log(COLORS.cyan, `[INFO] Server listening on port ${PORT}`)); 
+// app.listen(PORT, () => console.log(COLORS.cyan, `[INFO] Server listening on port ${PORT}`)); 
 
 server.listen(PORT, HOST, ()  => {
     console.log(COLORS.cyan, `[INFO] Server listening on port ${PORT}`)
