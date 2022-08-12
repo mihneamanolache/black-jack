@@ -1,15 +1,18 @@
 import express from 'express'
 import cors from 'cors'
+import path from 'path'
 import { Server } from 'socket.io'
 import { createServer } from 'http'
+import { fileURLToPath } from 'url';
 
 import { socket } from './socket.js';
 
 import { COLORS } from './constants/colors.js'
 
-
 const PORT = process.env.PORT || 4000; 
 const HOST = process.env.HOST || 'localhost'
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express(); 
 const server = createServer(app)
@@ -27,4 +30,4 @@ server.listen(PORT, HOST, ()  => {
     socket({io})
 })
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
