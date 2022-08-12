@@ -34,4 +34,4 @@ server.listen(PORT, HOST, ()  => {
     socket({io})
 })
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
