@@ -12,12 +12,11 @@ import { COLORS } from './constants/colors.js'
 const PORT = process.env.PORT || 4000; 
 const HOST = PORT === 4000 
                 ? 'localhost'
-                : process.env.IP
+                : '0.0.0.0'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log(`HOST: ${HOST}`)
-console.log(`PORT: ${PORT}`)
+console.log(`${HOST} is host`)
 
 const app = express(); 
 const server = createServer(app)
