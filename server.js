@@ -12,7 +12,7 @@ import { COLORS } from './constants/colors.js'
 const PORT = process.env.PORT || 4000; 
 const HOST = PORT === 4000 
                 ? 'localhost'
-                : 'react-jack.herokuapp.com'
+                : '0.0.0.0'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
